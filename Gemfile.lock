@@ -1,3 +1,15 @@
+GIT
+  remote: https://github.com/18F/omniauth_login_dot_gov.git
+  revision: 32649087fc38c45c987f2432da300e904436e67b
+  branch: main
+  specs:
+    omniauth_login_dot_gov (0.1.2)
+      faraday (~> 0.17)
+      json-jwt (~> 1.11)
+      jwt (~> 2.2)
+      multi_json (~> 1.14)
+      omniauth (~> 2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -60,6 +72,8 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    aes_key_wrap (1.1.0)
+    bindata (2.4.10)
     bindex (0.8.1)
     bootsnap (1.9.3)
       msgpack (~> 1.0)
@@ -68,13 +82,21 @@ GEM
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     erubi (1.10.0)
+    faraday (0.17.4)
+      multipart-post (>= 1.2, < 3)
     ffi (1.15.4)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    hashie (5.0.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.3)
       activesupport (>= 5.0.0)
+    json-jwt (1.13.0)
+      activesupport (>= 4.2)
+      aes_key_wrap
+      bindata
+    jwt (2.3.0)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -88,11 +110,20 @@ GEM
     mini_mime (1.1.2)
     minitest (5.14.4)
     msgpack (1.4.2)
+    multi_json (1.15.0)
+    multipart-post (2.1.1)
     nio4r (2.5.8)
     nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
+    omniauth (2.0.4)
+      hashie (>= 3.4.6)
+      rack (>= 1.6.2, < 3)
+      rack-protection
+    omniauth-rails_csrf_protection (1.0.0)
+      actionpack (>= 4.2)
+      omniauth (~> 2.0)
     pg (1.2.3)
     puma (5.5.2)
       nio4r (~> 2.0)
@@ -100,6 +131,8 @@ GEM
     rack (2.2.3)
     rack-mini-profiler (2.3.3)
       rack (>= 1.2.0)
+    rack-protection (2.1.0)
+      rack
     rack-proxy (0.7.0)
       rack
     rack-test (1.1.0)
@@ -184,6 +217,8 @@ DEPENDENCIES
   byebug
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  omniauth-rails_csrf_protection
+  omniauth_login_dot_gov!
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
